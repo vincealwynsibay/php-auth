@@ -1,7 +1,5 @@
 <?php
 
-
-
 function register($email, $username, $password)
 {
     require_once("database.php");
