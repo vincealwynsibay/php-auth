@@ -1,5 +1,5 @@
 <?php
-include('database.php');
+include_once('database.php');
 $id = $_SESSION["id"];
 include_once("get_user.php");
 $user = getUserById($id);
