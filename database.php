@@ -2,7 +2,7 @@
 
 $dbhost = "localhost";
 $dbusername = "root";
-$dbpassword = "vince";
+$dbpassword = "";
 $dbname = "post";
 
-$conn = new mysqli($dbhost, $dbusername, $dbpassword, $dbname) or die("Connection to Database Failed. %s\n" . $conn->error);
+$conn = mysqli_connect($dbhost, $dbusername, $dbpassword, $dbname) or die("Connection to Database Failed. %s\n" . $conn->error);

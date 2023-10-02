@@ -33,9 +33,14 @@ function register($email, $username, $password)
 
     $result = $conn->query($query);
 
-    if ($result) {
-        include_once("login.php");
-        $user = login($email, $password);
-        return ["message" => "Registered Successfully", "status_code" => 400];
+    if (!$result) {
+        return ["message" => "Not Registered Successfully", "status_code" => 401];
     }
+    include_once("login.php");
+    $user = login($email, $password);
+    $last_id = mysqli_insert_id($conn);
+    $last_id2 = mysqli_insert_id($conn);
+    echo "last_id $last_id";
+    echo "last_id $last_id2";
+    return ["message" => "Registered Successfully", "status_code" => 400, "data" => $last_id];
 }

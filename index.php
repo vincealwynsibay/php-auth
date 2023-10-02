@@ -9,14 +9,14 @@
 
 <body>
 
+    <a href='post-list.php'>posts</a>
     <?php
 
     include_once("auth.php");
     if (isset($_SESSION["id"])) {
 
-        include("profile.php");
     ?>
-
+        <a href='profile.php'>profile</a>
         <a href='logout.php'>logout</a>
     <?php
     } else {
